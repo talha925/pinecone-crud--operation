@@ -48,7 +48,7 @@ function App() {
     e.preventDefault();
     try {
       setIsLoading(true);
-      const resp = await axios.get(`${baseUrl}/api/v1/search?q=${searchInputRef.current.value}`)
+      const resp = await axios.get(`/api/v1/search?q=${searchInputRef.current.value}`)
       console.log(resp.data);
       setData(resp.data);
 
