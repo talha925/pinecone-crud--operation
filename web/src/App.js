@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const baseUrl = 'http://localhost:5001';
+// const baseUrl = 'http://localhost:5001';
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
   const getAllStories = async () => {
     try {
       setIsLoading(true);
-      const resp = await axios.get(`${baseUrl}/api/v1/stories`)
+      const resp = await axios.get(`/api/v1/stories`)
       console.log(resp.data);
       setData(resp.data);
 
@@ -66,7 +66,7 @@ function App() {
     try {
       setIsLoading(true);
 
-      const response = await axios.post(`${baseUrl}/api/v1/story`, {
+      const response = await axios.post(`/api/v1/story`, {
         title: titleInputRef.current.value,
         body: bodyInputRef.current.value,
       });
@@ -86,7 +86,7 @@ function App() {
     try {
       setIsLoading(true);
 
-      const response = await axios.delete(`${baseUrl}/api/v1/story/${id}`);
+      const response = await axios.delete(`/api/v1/story/${id}`);
       console.log("response: ", response.data);
 
       setIsLoading(false);
@@ -102,7 +102,7 @@ function App() {
     try {
       setIsLoading(true);
 
-      const response = await axios.put(`${baseUrl}/api/v1/story/${id}`, {
+      const response = await axios.put(`/api/v1/story/${id}`, {
         title: e.target.titleInput.value,
         body: e.target.bodyInput.value,
       });
