@@ -11,6 +11,7 @@ const nanoid = customAlphabet('1234567890', 20)
 const __dirname = path.resolve();
 
 
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
@@ -34,6 +35,9 @@ await pinecone.init({
 const app = express();
 app.use(express.json());
 app.use(cors(["http://localhost:3000", "127.0.0.1", "https://ewrer234234.appspot.app.com"]));
+//  baseurl/filename.txt
+app.get("/", express.static(path.join(__dirname, "./web/build")));
+app.use(express.static(path.join(__dirname, "./web/build")));
 
 app.use(morgan('combined'));
 
@@ -242,9 +246,6 @@ app.delete("/api/v1/story/:id", async (req, res) => {
 
 });
 
-//  baseurl/filename.txt
-app.get("/", express.static(path.join(__dirname, "./web/build")));
-app.use(express.static(path.join(__dirname, "./web/build")));
 
 // /Users/malik/Desktop/_CLASS/SMIT-chatbot-b3/04. nodejs/2. crud operation
 app.use('/static', express.static(path.join(__dirname, 'static')))
