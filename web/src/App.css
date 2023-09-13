@@ -1,10 +1,150 @@
-body {
-  margin: 1rem;
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Apply a background color to the entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
 
-.storyCard {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  margin: 1rem;
+/* Style the header */
+h1 {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
   padding: 1rem;
+}
+
+/* Style the forms */
+form {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Style the input fields */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+/* Style the buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+/* Style the loading indicator */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Style the alert message */
+.alert {
+  background-color: #ffc107;
+  color: black;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+/* Style the story cards */
+.storyCard {
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.storyCard h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.storyCard p {
+  margin-bottom: 1rem;
+}
+
+/* Style the edit and delete buttons within the story cards */
+.storyCard button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+/* Add hover effect to buttons */
+.storyCard button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the search input */
+#searchInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+/* Style the search button */
+form[style="text-align: right"] button[type="submit"] {
+  display: none;
+}
+
+/* Apply styles when searching */
+form[style="text-align: right"] #searchInput:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Apply styles when searching */
+form[style="text-align: right"] #searchInput:focus+button[type="submit"] {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+
+/* Style the cancel button within the edit form */
+.storyCard form button:last-child {
+  background-color: #d9534f;
+}
+
+/* Add hover effect to cancel button */
+.storyCard form button:last-child:hover {
+  background-color: #c9302c;
 }
